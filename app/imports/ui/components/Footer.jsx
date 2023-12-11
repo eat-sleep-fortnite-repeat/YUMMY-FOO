@@ -1,26 +1,33 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 import { Col, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-/** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
-const Footer = () => (
-  <footer className="mt-auto py-3 bg-light">
-    <Container>
-      <Col className="text-center">
-        Department of Information and Computer Sciences
-        {' '}
-        <br />
-        University of Hawaii
-        <br />
-        Honolulu, HI 96822
-        {' '}
-        <br />
-        <a href="http://ics-software-engineering.github.io/meteor-application-template-react">
-          Template Home
-          Page
-        </a>
-      </Col>
-    </Container>
-  </footer>
-);
+const Footer = () => {
+  const isLogged = Meteor.userId() !== null;
+  return (
+    <footer className="mt-auto py-3 bg-light border-top border-dark">
+      <Container>
+        <Col className="text-center">
+          <Link to="/about" style={{ textDecoration: 'none', marginRight: '10px' }}>
+            About
+          </Link>
+          {isLogged ? (
+            <Link to="/home" style={{ textDecoration: 'none', marginRight: '10px' }}>
+              Home
+            </Link>
+          ) : (
+            <Link to="/" style={{ textDecoration: 'none', marginRight: '10px' }}>
+              Home
+            </Link>
+          )}
+          <a href="https://eat-sleep-fortnite-repeat.github.io/eat-sleep-foo-repeat.github.io/">
+            Project Home Page
+          </a>
+        </Col>
+      </Container>
+    </footer>
+  );
+};
 
 export default Footer;

@@ -4,14 +4,604 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ],
-
-  "favoriteData": [
+  "defaultRecipes": [
+    {
+      "name": "Homemade Pizza",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/pizza.jpg?raw=true",
+      "time": "1 hour",
+      "cost": "$15",
+      "filter": ["Italian", "Homemade"],
+      "appliances": ["Oven", "Rolling pin"],
+      "ingredients": ["Pizza dough", "Tomato sauce", "Cheese", "Pepperoni"],
+      "recipe": "|1. Roll out the pizza dough|2. Spread tomato sauce|3. Add cheese and pepperoni|4. Bake in the oven",
+      "owner": []
+    },
+    {
+      "name": "Greek Salad",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/greekSalad.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$8",
+      "filter": ["Vegetarian", "Greek"],
+      "appliances": ["Knife", "Bowl"],
+      "ingredients": ["Cucumbers", "Tomatoes", "Feta cheese", "Olives", "Olive oil"],
+      "recipe": "|1. Dice cucumbers and tomatoes|2. Crumble feta cheese|3. Combine all ingredients in a bowl|4. Drizzle with olive oil",
+      "owner": []
+    },
+    {
+      "name": "Chocolate Brownies",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/brownies.jpg?raw=true",
+      "time": "40 minutes",
+      "cost": "$12",
+      "filter": ["Dessert", "Chocolate"],
+      "appliances": ["Baking pan", "Mixing bowl"],
+      "ingredients": ["Flour", "Cocoa powder", "Sugar", "Butter", "Eggs"],
+      "recipe": "|1. Mix flour and cocoa powder|2. Cream butter and sugar|3. Beat in eggs|4. Bake in a preheated oven",
+      "owner": []
+    },
+    {
+      "name": "Caprese Salad",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/caprese.jpg?raw=true",
+      "time": "10 minutes",
+      "cost": "$10",
+      "filter": ["Vegetarian", "Italian"],
+      "appliances": ["Knife", "Plate"],
+      "ingredients": ["Tomatoes", "Fresh mozzarella", "Basil leaves", "Balsamic glaze", "Salt", "Pepper"],
+      "recipe": "|1. Slice tomatoes and fresh mozzarella|2. Arrange slices on a plate|3. Tuck basil leaves between slices|4. Drizzle with balsamic glaze",
+      "owner": []
+    },
+    {
+      "name": "Chicken Stir-Fry",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/chickenStirFry.jpg?raw=true",
+      "time": "25 minutes",
+      "cost": "$18",
+      "filter": ["Asian", "Poultry"],
+      "appliances": ["Wok", "Spatula"],
+      "ingredients": ["Chicken breast", "Broccoli", "Bell peppers", "Soy sauce", "Ginger", "Garlic", "Sesame oil"],
+      "recipe": "|1. Cut chicken into bite-sized pieces|2. Stir-fry chicken in sesame oil|3. Add broccoli and bell peppers|4. Mix in soy sauce, ginger, and garlic",
+      "owner": []
+    },
+    {
+      "name": "Quinoa Salad with Avocado",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/quinoa.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$14",
+      "filter": ["Vegetarian", "Healthy"],
+      "appliances": ["Saucepan", "Bowl"],
+      "ingredients": ["Quinoa", "Avocado", "Cherry tomatoes", "Cucumber", "Red onion", "Lemon", "Olive oil", "Salt", "Pepper"],
+      "recipe": "|1. Cook quinoa according to package instructions|2. Dice avocado, cherry tomatoes, cucumber, and red onion|3. Combine cooked quinoa and diced vegetables|4. Squeeze lemon juice, drizzle olive oil, and season with salt and pepper",
+      "owner": []
+    },
+    {
+      "name": "Margherita Pizza",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/margheritaPizza.jpg?raw=true",
+      "time": "1 hour",
+      "cost": "$14",
+      "filter": ["Italian", "Homemade"],
+      "appliances": ["Oven", "Rolling pin"],
+      "ingredients": ["Pizza dough", "Tomato sauce", "Fresh mozzarella", "Basil leaves"],
+      "recipe": "|1. Roll out the pizza dough|2. Spread tomato sauce|3. Arrange fresh mozzarella slices|4. Tuck basil leaves on top|5. Bake in the oven",
+      "owner": []
+    },
+    {
+      "name": "Vegetable Biryani",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/vegetableBiryani.jpg?raw=true",
+      "time": "45 minutes",
+      "cost": "$16",
+      "filter": ["Indian", "Vegetarian"],
+      "appliances": ["Pot", "Spatula"],
+      "ingredients": ["Basmati rice", "Mixed vegetables", "Spices", "Ghee"],
+      "recipe": "|1. Rinse and soak basmati rice|2. Sauté spices in ghee|3. Add mixed vegetables and rice|4. Cook until rice is tender",
+      "owner": []
+    },
+    {
+      "name": "Lemon Garlic Shrimp",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/lemonGarlicShrimp.jpg?raw=true",
+      "time": "20 minutes",
+      "cost": "$20",
+      "filter": ["Seafood"],
+      "appliances": ["Skillet", "Lemon squeezer"],
+      "ingredients": ["Shrimp", "Garlic", "Lemon", "Butter", "Parsley"],
+      "recipe": "|1. Sauté minced garlic in butter|2. Add shrimp and cook until pink|3. Squeeze lemon juice over shrimp|4. Garnish with chopped parsley",
+      "owner": []
+    },
+    {
+      "name": "Pasta Carbonara",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/pastaCarbonara.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$12",
+      "filter": ["Italian", "Pasta"],
+      "appliances": ["Pot", "Pan"],
+      "ingredients": ["Spaghetti", "Eggs", "Parmesan cheese", "Pancetta"],
+      "recipe": "|1. Cook spaghetti according to package instructions|2. Beat eggs and mix with grated Parmesan|3. Sauté pancetta until crispy|4. Toss cooked pasta in egg mixture",
+      "owner": []
+    },
+    {
+      "name": "Vegetarian Tacos",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/veggieTacos.jpg?raw=true",
+      "time": "25 minutes",
+      "cost": "$10",
+      "filter": ["Mexican", "Vegetarian"],
+      "appliances": ["Skillet", "Tongs"],
+      "ingredients": ["Tortillas", "Black beans", "Corn", "Avocado", "Lettuce", "Salsa"],
+      "recipe": "|1. Heat tortillas in a skillet|2. Fill with a mix of black beans, corn, and diced avocado|3. Top with lettuce and salsa|4. Serve warm",
+      "owner": []
+    },
+    {
+      "name": "Beef Stir-Fry",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/beefStirFry.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$22",
+      "filter": ["Asian", "Beef"],
+      "appliances": ["Wok", "Spatula"],
+      "ingredients": ["Beef strips", "Broccoli", "Carrots", "Soy sauce", "Sesame oil"],
+      "recipe": "|1. Stir-fry beef strips in sesame oil|2. Add broccoli and carrots|3. Pour in soy sauce and toss until cooked|4. Serve hot",
+      "owner": []
+    },
+    {
+      "name": "Berry Parfait",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/berryParfait.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$9",
+      "filter": ["Dessert", "Healthy"],
+      "appliances": ["Glass", "Spoon"],
+      "ingredients": ["Greek yogurt", "Mixed berries", "Granola", "Honey"],
+      "recipe": "|1. Layer Greek yogurt, mixed berries, and granola in a glass|2. Repeat layers until the glass is filled|3. Drizzle honey on top|4. Enjoy!",
+      "owner": []
+    },
+    {
+      "name": "One Pan Pasta",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/onePanPasta.jpg?raw=true",
+      "time": "15-20 minutes",
+      "cost": "$9",
+      "filter": ["Lunch", "Dinner", "Pasta"],
+      "appliances": ["Stove", "Pot", "Pan"],
+      "ingredients": ["Pasta of choice", "Cherry Tomatoes", "Garlic", "Olive oil", "Salt", "Pepper", "Fresh basil"],
+      "recipe": "|1. Boil pasta according to package instructions.|2. In a pan, saute minced garlic in olive oil until fragrant.|3. Add halved cherry tomatoes, salt, and pepper. Cook until tomatoes soften|4. Mix in the cooked pasta. Add fresh basil if available.",
+      "owner": []
+    },
+    {
+      "name": "Stir-Fry Rice Bowl",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/StirFryRiceBowl.jpg?raw=true",
+      "time": "20-25 minutes",
+      "cost": "$11",
+      "filter": ["Asian", "Vegetarian"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Cooked rice", "Mixed vegetables", "Protein of choice(tofu, chicken, shrimp, etc)", "Soy sauce", "Sesame oil", "Garlic powder"],
+      "recipe": "|1. Cook rice according to package instructions.|2. In a pan, stir-fry the protein and mixed vegetables with soy sauce, sesame oil, and garlic powder.|3. Mix in the cooked rice until well combined.",
+      "owner": []
+    },
+    {
+      "name": "Quesadillas",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/cheeseQuesadilla.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$7",
+      "filter": ["Mexican", "Lunch", "Vegetarian"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Flour tortillas", "Shredded cheese", "Cooked chicken or beans", "Salsa"],
+      "recipe": "|1. Place a tortilla in a pan over medium heat.|2. Sprinkle shredded cheese on one half of the tortilla.|3. Add cooked chicken or beans on top of the cheese.|4. Fold the tortilla in half and press down. Cook until the cheese melts.|5. Serve with salsa if desired.",
+      "owner": []
+    },
+    {
+      "name": "Microwave Mug Omelette",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/microwaveMugOmelette.jpg?raw=true",
+      "time": "5 minutes",
+      "cost": "$4",
+      "filter": ["Microwavable", "Breakfast"],
+      "appliances": ["Microwave", "Microwave-safe Mug"],
+      "ingredients": ["Eggs", "Milk", "Cheese", "Diced vegetables(bell peppers, onions, spinach", "Salt and pepper"],
+      "recipe": "|1. In a microwave-safe mug, whisk together eggs and a splash of milk.|2. Stir in diced vegetables, cheese, salt, and pepper.|3. Microwave in 30-second intervals, stirring between each, until the eggs are fully cooked.",
+      "owner": []
+    },
+    {
+      "name": "Peanut Butter Banana Wrap",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/peanutButterBananaWrap.jpg?raw=true",
+      "time": "5 minutes",
+      "cost": "$3",
+      "filter": ["Snack", "Vegetarian"],
+      "appliances": ["None needed!"],
+      "ingredients": ["Whole wheat tortilla", "Peanut butter", "Banana, sliced", "Honey"],
+      "recipe": "|1. Spread peanut butter on tortilla.|2. Place banana slices on one side of the tortilla.|3. Drizzle with honey if desired.|4. Fold the tortilla and enjoy!",
+      "owner": []
+    },
+    {
+      "name": "Vegetarian Chickpea Salad",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/vegetarianChickpeaSalad.jpg?raw=true",
+      "time": "10 minutes",
+      "cost": "$8",
+      "filter": ["Salad", "Vegetarian"],
+      "appliances": ["None needed!"],
+      "ingredients": ["Canned chickpeas, drained and rinsed", "Cherry tomatoes, halved", "Cucumber, diced", "Red onion, finely chopped", "Feta cheese, crumbled", "Olive oil", "Lemon juice", "Salt and pepper"],
+      "recipe": "|1. In a bowl, combine chickpeas, cherry tomatoes, cucumber, red onion, and feta cheese.|2. Drizzle with olive oil and lemon juice.|3. Season with salt and pepper.|4. Toss to combine",
+      "owner": []
+    },
+    {
+      "name": "Pesto Pasta with Cherry Tomatoes",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/pestoPastaWithCerryTomatoes.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$10",
+      "filter": ["Vegetarian", "Italian"],
+      "appliances": ["Stove", "Pot"],
+      "ingredients": ["Pasta of your choice", "Pesto sauce", "Cherry tomatoes, halved", "Parmesan cheese, grated"],
+      "recipe": "|1. Cook pasta according to package instructions.|2. Drain the pasta and mix in pesto sauce.|3. Add halved cherry tomatoes and grated Parmesan cheese.|4. Toss to combine",
+      "owner": []
+    },
+    {
+      "name": "Black Bean and Corn Quesadillas",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/blackBeanAndCornQuesadillas.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$7",
+      "filter": ["Vegetarian", "Mexican"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Flour tortillas", "Canned black beans, drained and rinsed", "Frozen corn, thawed", "Shredded cheese", "Salsa"],
+      "recipe": "|1. In a pan, warm black beans and corn.|2. Place a tortilla in the pan, add beans, corn, and shredded cheese.|3. Top with another tortilla and cook until the cheese melts.|4. Serve with salsa.",
+      "owner": []
+    },
+    {
+      "name": "Caprese Sandwich",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/capreseSandwich2.jpg?raw=true",
+      "time": "10 minutes",
+      "cost": "$7",
+      "filter": ["Vegetarian", "Lunch"],
+      "appliances": ["None needed!"],
+      "ingredients": ["Baguette or sandwich bread", "Fresh mozzarella, sliced", "Tomatoes, sliced", "Fresh basil leaves", "Balsamic glaze", "Salt and pepper"],
+      "recipe": "|1. Slice the baguette and layer with fresh mozzarella, tomatoes, and basil leaves.|2. Drizzle with balsamic glaze and season with salt and pepper.",
+      "owner": []
+    },
+    {
+      "name": "Microwave Baked Potato",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/microwaveBakedPotato2.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$5",
+      "filter": ["Vegetarian", "Microwavable"],
+      "appliances": ["Microwave"],
+      "ingredients": ["Russet potatoes", "Olive oil", "Salt and pepper", "Toppings of your choice(sour cream, cheese, chives)"],
+      "recipe": "|1. Pierce the potatoes with a fork and rub with olive oil, salt, and pepper.|2. Microwave on high for 8-10 minutes or until tender.|3. Add your favorite toppings.",
+      "owner": []
+    },
+    {
+      "name": "Banana Oat Pancakes",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/bananaOatPancakes.jpeg?raw=true",
+      "time": "10 minutes",
+      "cost": "$3",
+      "filter": ["Breakfast", "Healthy"],
+      "appliances": ["Stove"],
+      "ingredients": ["Bananas", "Oats", "Eggs", "Salt"],
+      "recipe": "|1. Mash banana|2. Whisk in eggs, salt, and oats|3. Cook for about two minutes",
+      "owner": [],
+      "dietary": ["Vegetarian", "Gluten-Free", "Dairy-Free"]
+    },
+    {
+      "name": "Chicken Pesto Pizza",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/chickenPestoPizza.webp?raw=true",
+      "time": "20 minutes",
+      "cost": "$10",
+      "filter": ["Family-sharing"],
+      "appliances": ["Oven"],
+      "ingredients": ["Pesto basil sauce", "Pre-baked pizza crust", "Chicken breast", "Artichoke", "Fontina cheese"],
+      "recipe": "1. Preheat the oven to 450 degrees F |2. Spread pesto sauce over the pizza crust. Arrange chicken pieces and artichoke hearts over the sauce, and sprinkle with cheese.|3. Bake for 8 to 10 minutes in the preheated oven, until cheese is melted and lightly browned at the edges.",
+      "owner": [],
+      "dietary": ["Dairy-Free"]
+    },
+    {
+      "name": "Spicy Ramen Noodles",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/spicyRamenNoods.webp?raw=true",
+      "time": "15 minutes",
+      "cost": "$4",
+      "filter": ["Quick"],
+      "appliances": ["Stove"],
+      "ingredients": ["Shoyu", "Sesame oil", "vinegar", "Salt", "Ramen noodles", "Green onions"],
+      "recipe": "|1. Whisk soy sauce, sesame oil, brown sugar, rice vinegar, chili garlic sauce, and ginger together in a small bowl. Add peanut butter, whisking until well combined, and set aside.|2. Bring 4 cups of water to a boil in a pot. Discard the flavor packet and add ramen noodles to the boiling water. Cook until noodles are tender, 4 to 5 minutes. Drain noodles, reserving some of the noodle water in case you need to thin out the sauce later.|3. Pour sauce over ramen noodles, tossing until well coated. If sauce is too thick, thin out with a small amount of the reserved noodle water until you reach your desired consistency. Your hot noodles will soak up the sauce. Garnish with peanuts and green onion, and serve.",
+      "owner": [],
+      "dietary": ["Vegetarian", "Dairy-Free"]
+    },
+    {
+      "name": "Pork Tenderloin Diablo",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/porkTenderloinDiablo.webp?raw=true",
+      "time": "30 minutes",
+      "cost": "$12",
+      "filter": ["Easy"],
+      "appliances": ["Oven", "Skillet"],
+      "ingredients": ["Pork tenderloin", "chicken broth", "Heavy cream", "Horseradish", "Dijon mustard", "Cayenne pepper"],
+      "recipe": "|1. Preheat oven to 375 degrees F. Season pork with salt and pepper.\n2. Heat oil in an ovenproof skillet over high heat. Cook pork until browned on one side, 3 to 4 minutes. Turn over...\n3. Remove any excess oil from the skillet and place it over medium-high heat. Pour in chicken broth and bring to a boil...\n4. Slice pork into 1/2-inch slices and serve topped with sauce.",
+      "owner": []
+    },
+    {
+      "name": "Baked Denver Omelet",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/denverBakedOmelet.webp?raw=true",
+      "time": "45 minutes",
+      "cost": "$10",
+      "filter": ["Easy"],
+      "appliances": ["Oven"],
+      "ingredients": ["Butter", "Onion", "Bell pepper", "Ham", "Eggs", "Milk", "Cheese"],
+      "recipe": "|1. Preheat oven to 400 degrees F|2. Melt butter in a large skillet over medium heat; cook and stir onion...|3. Beat eggs and milk in a large bowl. Stir in Cheddar cheese and... |4. Bake in preheated oven until eggs are browned and puffy, about 25 minutes. Serve warm.",
+      "owner": [],
+      "dietary": ["Gluten-Free"]
+    },
+    {
+      "name": "Vegan Sweet Potato Chickpea Curry",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/chickpeaCurry.webp?raw=true",
+      "time": "30 minutes",
+      "cost": "$9",
+      "filter": ["Healthy"],
+      "appliances": ["Stove"],
+      "ingredients": ["Onion", "Garlic", "Chickpeas", "Tomatoes", "Coconut milk", "Spinach"],
+      "recipe": "|1. Heat oil in a skillet over medium heat. Cook onion, garlic, and ginger in hot oil until softened, about 5 minutes. Add chickpeas, tomatoes, coconut milk, and sweet potato. Bring to a boil, reduce heat to low, and simmer until tender, about 15 minutes.|2. Season with garam masala, cumin, turmeric, salt, and chile flakes. Add spinach right before serving.",
+      "owner": [],
+      "dietary": ["Vegan", "Gluten-Free"]
+    },
+    {
+      "name": "Soy Honey-Glazed Salmon with Asparagus",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/soyGlazedSalmon.webp?raw=true",
+      "time": "20 minutes",
+      "cost": "$8",
+      "filter": ["Easy", "Healthy"],
+      "appliances": ["Stove"],
+      "ingredients": ["Asparagus", "Shoyu", "Olive oil", "Honey", "Salmon","Salt"],
+      "recipe": "|1. Place a steamer insert into a saucepan and fill with water to just below the bottom of the steamer. Bring water to a boil. Add asparagus, cover, and steam until slightly tender, 2 to 4 minutes.|2. Meanwhile, whisk together soy sauce and honey in a small bowl until glaze is smooth.|3. Set an oven rack about 6 inches from the heat source; preheat the oven broiler. Line a baking sheet with aluminum foil and brush with olive oil. |4. Place salmon fillet and steamed asparagus on the prepared baking sheet; season with salt and pepper. |5. Cook under the preheated broiler for 5 minutes. Drizzle 2/3 of the glaze over salmon and asparagus. Continue broiling until fish flakes easily with a fork, 3 to 5 minutes. Drizzle remaining glaze over salmon.",
+      "owner": [],
+      "dietary": ["Gluten-Free", "Dairy-Free"]
+    },
+    {
+      "name": "Bagels",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/bagel.webp?raw=true",
+      "time": "30 minutes",
+      "cost": "$5",
+      "filter": ["Breakfast", "Easy"],
+      "appliances": ["Oven", "Air fryer"],
+      "ingredients": ["Flour", "Baking powder", "Salt", "Greek yogurt", "Egg"],
+      "recipe": "|1. Preheat oven to 375F|2 combine the flour, baking powder and salt and whisk well. Add the yogurt and mix with a fork or spatula until well combined, it will look like small crumbles. |3. Knead the dough a few times |4.Divide into 4 equal balls |5.Top with egg wash and sprinkle both sides with seasoning of your choice. Bake on the top rack of the oven for 25 minutes. Let cool at least 15 minutes before cutting",
+      "owner": [],
+      "dietary": ["Vegetarian"]
+    },
+    {
+      "name": "Crepes",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/crepe.jpeg?raw=true",
+      "time": "30 minutes",
+      "cost": "$5",
+      "filter": ["Breakfast", "Sweet"],
+      "appliances": ["Frying pan", "Griddle"],
+      "ingredients": ["Flour", "Milk", "Eggs", "Salt", "Water", "Butter"],
+      "recipe": "|1. Whisk flour and eggs together in a large mixing bowl; gradually add in milk and water, stirring to combine. Add salt and melted butter; beat until smooth.|2. Heat a lightly oiled griddle or frying pan over medium-high heat...|3. Cook until the top of the crêpe is no longer wet and the bottom has turned light brown...",
+      "owner": [],
+      "dietary": ["Vegetarian"]
+    },
+    {
+      "name": "Avocado Toast",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/img/avoToast.webp?raw=true",
+      "time": "5 minutes",
+      "cost": "$3",
+      "filter": ["Light", "Healthy"],
+      "appliances": ["Toaster"],
+      "ingredients": ["Gluten-Free Bread", "Avocado", "Salt"],
+      "recipe": "|1. Toast your slice of bread until golden and firm.|2. Remove the pit from your avocado. Use a big spoon to scoop out the flesh. Put it in a bowl and mash it up with a fork until it’s as smooth as you like it. Mix in a pinch of salt (about 1/8 teaspoon) and add more to taste, if desired.|3. Spread avocado on top of your toast. Enjoy as-is or top with any extras offered in this post (I highly recommend a light sprinkle of flaky sea salt, if you have it).",
+      "owner": [],
+      "dietary": ["Vegan", "Gluten-Free", "Dairy-Free"]
+    },
+    {
+      "name": "Easy Microwave Mac and Cheese",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/mac_and_cheese.jpg?raw=true",
+      "time": "10 minutes",
+      "cost": "$5",
+      "filter": ["Quick", "Comfort Food"],
+      "appliances": ["Microwave", "Microwave-safe Bowl"],
+      "ingredients": ["Macaroni", "Cheddar cheese", "Milk", "Butter", "Salt"],
+      "recipe": "|1. Cook macaroni in the microwave according to package instructions.|2. In a microwave-safe bowl, mix shredded cheddar, milk, and butter.|3. Microwave in 30-second intervals, stirring between each, until the cheese is melted and creamy.|4. Add salt to taste and enjoy!",
+      "owner": []
+    },
+    {
+      "name": "Vegetarian Ramen Bowl",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/vegetarian_ramen.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$7",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Stove", "Pot"],
+      "ingredients": ["Ramen noodles", "Vegetable broth", "Tofu", "Vegetables (carrots, broccoli, mushrooms)", "Soy sauce", "Sesame oil"],
+      "recipe": "|1. Cook ramen noodles according to package instructions.|2. In a pot, heat vegetable broth and add chopped tofu and vegetables.|3. Season with soy sauce and a drizzle of sesame oil.|4. Combine cooked noodles with the broth and vegetables. Serve hot.",
+      "owner": []
+    },
+    {
+      "name": "BBQ Chicken Quesadillas",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/bbq_chicken_q.jpg?raw=true",
+      "time": "20 minutes",
+      "cost": "$8",
+      "filter": ["Mexican", "Chicken"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Flour tortillas", "Cooked chicken (shredded)", "BBQ sauce", "Cheddar cheese", "Red onion (sliced)"],
+      "recipe": "|1. Place a tortilla in a pan over medium heat.|2. Spread shredded chicken on one half of the tortilla.|3. Drizzle BBQ sauce over the chicken, add sliced red onion, and sprinkle with cheddar cheese.|4. Fold the tortilla in half and cook until the cheese melts. Serve with extra BBQ sauce if desired.",
+      "owner": []
+    },
+    {
+      "name": "Caprese Wrap",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/caprese_wrap.jpg?raw=true",
+      "time": "10 minutes",
+      "cost": "$6",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["None needed!"],
+      "ingredients": ["Whole wheat wrap", "Tomatoes", "Fresh mozzarella", "Basil leaves", "Balsamic glaze"],
+      "recipe": "|1. Lay out the whole wheat wrap.|2. Layer slices of tomatoes, fresh mozzarella, and basil leaves on the wrap.|3. Drizzle with balsamic glaze.|4. Roll up the wrap and enjoy!",
+      "owner": []
+    },
+    {
+      "name": "Egg Fried Rice",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/eggFriedRice.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$5",
+      "filter": ["Asian", "Quick"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Cooked rice", "Eggs", "Frozen peas and carrots", "Soy sauce", "Sesame oil"],
+      "recipe": "|1. Heat sesame oil in a pan and add frozen peas and carrots.|2. Push the vegetables to one side and pour beaten eggs on the other side.|3. Scramble the eggs and mix with the vegetables.|4. Add cooked rice and soy sauce, stir-frying until well combined. Serve hot.",
+      "owner": []
+    },
+    {
+      "name": "Mediterranean Chickpea Salad",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/chickpea_salad.jpg?raw=true",
+      "time": "15 minutes",
+      "cost": "$8",
+      "filter": ["Vegetarian", "Healthy"],
+      "appliances": ["Bowl"],
+      "ingredients": ["Canned chickpeas (drained and rinsed)", "Cherry tomatoes", "Cucumber", "Red onion", "Feta cheese", "Olive oil", "Lemon juice", "Salt", "Pepper"],
+      "recipe": "|1. In a bowl, combine chickpeas, cherry tomatoes, cucumber, red onion, and crumbled feta cheese.|2. Drizzle with olive oil and lemon juice.|3. Season with salt and pepper. Toss to combine and enjoy!",
+      "owner": []
+    },
+    {
+      "name": "Peanut Butter Banana Smoothie",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/pb_banana_smoothie.jpg?raw=true",
+      "time": "5 minutes",
+      "cost": "$4",
+      "filter": ["Quick", "Smoothie", "Healthy"],
+      "appliances": ["Blender"],
+      "ingredients": ["Banana", "Peanut butter", "Greek yogurt", "Milk", "Ice cubes"],
+      "recipe": "|1. In a blender, combine banana, peanut butter, Greek yogurt, milk, and ice cubes.|2. Blend until smooth and creamy.|3. Pour into a glass and enjoy your peanut butter banana smoothie!",
+      "owner": []
+    },
+    {
+      "name": "Sheet Pan Chicken Fajitas",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/sheetpan_chicken_fajitas.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$10",
+      "filter": ["Mexican", "Chicken"],
+      "appliances": ["Oven", "Sheet pan"],
+      "ingredients": ["Chicken breast strips", "Bell peppers (sliced)", "Onions (sliced)", "Fajita seasoning", "Flour tortillas", "Salsa", "Sour cream"],
+      "recipe": "|1. Preheat the oven and toss chicken, bell peppers, and onions with fajita seasoning on a sheet pan.|2. Bake until the chicken is cooked through and the vegetables are tender.|3. Warm the flour tortillas in the oven.|4. Serve the chicken and vegetables in tortillas with salsa and sour cream.",
+      "owner": []
+    },
+    {
+      "name": "One-Pot Spaghetti",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/onePotSpaghetti.jpg?raw=true",
+      "time": "15-20 minutes",
+      "cost": "$10",
+      "filter": ["Lunch", "Dinner", "Pasta"],
+      "appliances": ["Stove", "Pot", "Pan"],
+      "ingredients": ["Spaghetti", "Olive oil", "Onion", "Garlic", "Tomato sauce", "Water", "Salt", "Pepper", "Fresh basil"],
+      "recipe": "|1. In a pot, heat olive oil over medium heat. Add chopped onions and garlic, sauté until softened.|2. Add spaghetti, tomato sauce, water, salt, and pepper to the pot. Break the spaghetti if needed to fit.|3. Bring to a boil, then reduce heat to a simmer. Cover and cook until the spaghetti is al dente, stirring occasionally.|4. Once cooked, top with fresh basil and serve hot.",
+      "owner": []
+    },
+    {
+      "name": "Mango Salsa Chicken",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-53/img/mangoSalsaChicken.jpg?raw=true",
+      "time": "30 minutes",
+      "cost": "$15",
+      "filter": ["Dinner", "Chicken", "Fruity"],
+      "appliances": ["Oven", "Pan"],
+      "ingredients": ["Chicken breasts", "Salt", "Black pepper", "Olive oil", "Red onion", "Mango", "Tomato", "Cilantro", "Lime juice"],
+      "recipe": "|1. Preheat the oven to 375°F.|2. Season chicken breasts with salt and black pepper.|3. In an oven-safe pan, heat olive oil over medium-high heat. Sear the chicken until golden brown on both sides.|4. Transfer the pan to the oven and bake for about 20 minutes or until the chicken is cooked through.|5. While the chicken is baking, prepare the mango salsa. Combine diced red onion, mango, tomato, cilantro, and lime juice in a bowl.|6. Once the chicken is done, spoon the mango salsa over the top and serve.",
+      "owner": []
+    },
+    {
+      "name": "Lentil Spinach Curry",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Lentil%20Spinach%20Curry.png?raw=true",
+      "time": "30 minutes",
+      "cost": "$8",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Lentils", "Spinach", "Tomatoes", "Onions", "Garlic", "Ginger", "Curry powder", "Cumin", "Coriander", "Salt"],
+      "recipe": "|1. Cook lentils according to package instructions.|2. In a pan, sauté onions, garlic, and ginger. Add tomatoes and spices.|3. Mix in cooked lentils and spinach. Simmer until spinach wilts.|4. Serve hot over rice.",
+      "owner": []
+    },
+    {
+      "name": "Chickpea Salad Bowl",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Chickpea%20Salad%20Bowl.png?raw=true",
+      "time": "20 minutes",
+      "cost": "$10",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Bowl", "Knife"],
+      "ingredients": ["Chickpeas", "Cucumbers", "Tomatoes", "Red onion", "Feta cheese", "Olive oil", "Lemon juice", "Salt", "Pepper"],
+      "recipe": "|1. Rinse and drain chickpeas. Chop vegetables and crumble feta.|2. In a bowl, mix chickpeas, vegetables, and feta.|3. Drizzle olive oil and lemon juice. Season with salt and pepper.|4. Toss well and enjoy.",
+      "owner": []
+    },
+    {
+      "name": "Quinoa Stuffed Bell Peppers",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Quinoa%20Stuffed%20Bell%20Peppers.png?raw=true",
+      "time": "40 minutes",
+      "cost": "$12",
+      "filter": ["Vegetarian"],
+      "appliances": ["Oven", "Baking dish"],
+      "ingredients": ["Quinoa", "Bell peppers", "Black beans", "Corn", "Tomatoes", "Cheese", "Cumin", "Chili powder", "Cilantro", "Salt"],
+      "recipe": "|1. Cook quinoa according to package instructions.|2. Mix quinoa with black beans, corn, tomatoes, cheese, and spices.|3. Cut bell peppers in half, stuff with quinoa mixture.|4. Bake until peppers are tender. Garnish with cilantro and serve.",
+      "owner": []
+    },
+    {
+      "name": "Caprese Pasta Salad",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Caprese%20Pasta%20Salad.png?raw=true",
+      "time": "25 minutes",
+      "cost": "$9",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Pot", "Bowl"],
+      "ingredients": ["Pasta", "Cherry tomatoes", "Mozzarella", "Basil", "Olive oil", "Balsamic vinegar", "Garlic", "Salt", "Pepper"],
+      "recipe": "|1. Cook pasta according to package instructions.|2. Mix pasta with halved cherry tomatoes, mozzarella, and chopped basil.|3. In a bowl, whisk together olive oil, balsamic vinegar, minced garlic, salt, and pepper.|4. Toss pasta with the dressing. Serve chilled.",
+      "owner": []
+    },
+    {
+      "name": "Sweet Potato and Black Bean Burritos",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Sweet%20Potato%20and%20Black%20Bean%20Burritos.png?raw=true",
+      "time": "35 minutes",
+      "cost": "$11",
+      "filter": ["Vegetarian"],
+      "appliances": ["Oven", "Pan"],
+      "ingredients": ["Sweet potatoes", "Black beans", "Corn", "Onions", "Cilantro", "Lime juice", "Tortillas", "Cheese", "Cumin", "Chili powder"],
+      "recipe": "|1. Roast sweet potatoes in the oven until tender.|2. In a pan, sauté onions, add black beans, corn, and spices.|3. Mash sweet potatoes and mix with black bean mixture.|4. Spoon the mixture onto tortillas, add cheese, and roll into burritos.",
+      "owner": []
+    },
+    {
+      "name": "Mediterranean Quinoa Salad",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Mediterranean%20Quinoa%20Salad.png?raw=true",
+      "time": "20 minutes",
+      "cost": "$10",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Bowl", "Pot"],
+      "ingredients": ["Quinoa", "Cucumbers", "Cherry tomatoes", "Kalamata olives", "Feta cheese", "Red onion", "Olive oil", "Lemon juice", "Oregano", "Salt"],
+      "recipe": "|1. Cook quinoa according to package instructions.|2. In a bowl, combine quinoa, diced cucumbers, halved cherry tomatoes, olives, and crumbled feta.|3. Drizzle with olive oil, lemon juice, and sprinkle with oregano and salt.|4. Mix well and serve chilled.",
+      "owner": []
+    },
+    {
+      "name": "Butternut Squash Risotto",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Butternut%20Squash%20Risotto.png?raw=true",
+      "time": "45 minutes",
+      "cost": "$15",
+      "filter": ["Vegetarian"],
+      "appliances": ["Stove", "Pan"],
+      "ingredients": ["Arborio rice", "Butternut squash", "Vegetable broth", "Onions", "Parmesan cheese", "White wine", "Butter", "Sage", "Salt", "Pepper"],
+      "recipe": "|1. Sauté onions and butternut squash in butter until softened.|2. Add Arborio rice, white wine, and cook until wine is absorbed.|3. Gradually add vegetable broth, stirring until rice is creamy and cooked.|4. Stir in Parmesan, sage, salt, and pepper. Serve hot.",
+      "owner": []
+    },
+    {
+      "name": "Spinach and Mushroom Quesadillas",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Spinach%20and%20Mushroom%20Quesadillas.png?raw=true",
+      "time": "25 minutes",
+      "cost": "$9",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Pan"],
+      "ingredients": ["Flour tortillas", "Spinach", "Mushrooms", "Cheese", "Onions", "Garlic", "Olive oil", "Cumin", "Chili powder", "Salt"],
+      "recipe": "|1. Sauté onions and mushrooms in olive oil until tender.|2. Add garlic, spinach, cumin, chili powder, and cook until spinach wilts.|3. Place tortillas on the pan, add cheese and the spinach-mushroom mixture.|4. Fold and cook until cheese melts. Slice and serve.",
+      "owner": []
+    },
+    {
+      "name": "Avocado and Black Bean Wrap",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/issue-66/img/Avocado%20and%20Black%20Bean%20Wrap.png?raw=true",
+      "time": "15 minutes",
+      "cost": "$8",
+      "filter": ["Quick", "Vegetarian"],
+      "appliances": ["Bowl", "Knife"],
+      "ingredients": ["Whole wheat wraps", "Avocado", "Black beans", "Corn", "Tomatoes", "Lime juice", "Cilantro", "Salt", "Pepper"],
+      "recipe": "|1. In a bowl, mash avocado and mix with black beans, corn, diced tomatoes, lime juice, and cilantro.|2. Season with salt and pepper.|3. Spoon the mixture onto whole wheat wraps, fold, and enjoy.",
+      "owner": []
+    },
+    {
+      "name": "Eggplant Parmesan",
+      "image": "https://github.com/eat-sleep-fortnite-repeat/YUMMY-FOO/blob/main/eggplantParm.jpg?raw=true",
+      "time": "50 minutes",
+      "cost": "$13",
+      "filter": ["Vegetarian"],
+      "appliances": ["Oven", "Baking dish"],
+      "ingredients": ["Eggplant", "Tomato sauce", "Mozzarella cheese", "Parmesan cheese", "Bread crumbs", "Eggs", "Basil", "Oregano", "Garlic powder", "Salt"],
+      "recipe": "|1. Slice eggplant, dip in beaten eggs, and coat with breadcrumbs. Bake until golden.|2. In a baking dish, layer eggplant, tomato sauce, mozzarella, and Parmesan.|3. Repeat layers, sprinkle with basil, oregano, garlic powder, and salt.|4. Bake until bubbly and golden. Let it cool before serving.",
+      "owner": []
+    }
 
   ]
 }
+
+
+
+
+

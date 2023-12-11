@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListStuff from '../pages/ListStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
+import ListRecipeAdmin from '../pages/ListRecipeAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
@@ -17,7 +17,11 @@ import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
-import Home from '../pages/Home';
+import About from '../pages/About';
+import ExampleRecipe from '../pages/ExampleRecipe';
+import AddRecipe from '../pages/AddRecipe';
+import Favorites from '../pages/Favorites';
+import Search from '../pages/Search';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -32,16 +36,22 @@ const App = () => {
       <div className="d-flex flex-column min-vh-100">
         <NavBar />
         <Routes>
+          <Route path="/" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
           <Route exact path="/" element={<Landing />} />
+          <Route exact path="/home" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
-          <Route path="/home" element={<ProtectedRoute><Landing /></ProtectedRoute>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/addrecipe" element={<AddRecipe />} />
           <Route path="/list" element={<ProtectedRoute><ListStuff /></ProtectedRoute>} />
-          <Route path="/userhome" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddStuff /></ProtectedRoute>} />
+          <Route path="/search" element={<ProtectedRoute><Search /></ProtectedRoute>} />
+          <Route path="/examplerecipe" element={<ProtectedRoute><ExampleRecipe /></ProtectedRoute>} />
+          <Route path="/examplerecipe/:_id" element={<ProtectedRoute><ExampleRecipe /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditStuff /></ProtectedRoute>} />
-          <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
+          <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListRecipeAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
